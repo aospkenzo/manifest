@@ -4,6 +4,8 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
+  <remote  name="aospkenzo"
+           fetch="https://github.com/aospkenzo" />
   <default revision="refs/tags/android-8.1.0_r7"
            remote="aosp"
            sync-j="4" />
@@ -366,18 +368,12 @@
   <project path="hardware/intel/sensors" name="platform/hardware/intel/sensors" groups="intel_sensors,pdk" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" groups="pdk" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense,pdk" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
   <project path="hardware/marvell/bt" name="platform/hardware/marvell/bt" groups="marvell_bt,pdk" />
-  <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom,qcom_audio,pdk" />
   <project path="hardware/qcom/bootctrl" name="platform/hardware/qcom/bootctrl" groups="pdk" />
-  <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom,pdk" />
   <project path="hardware/qcom/camera" name="platform/hardware/qcom/camera" groups="qcom_camera" />
   <project path="hardware/qcom/data/ipacfg-mgr" name="platform/hardware/qcom/data/ipacfg-mgr" groups="qcom,pdk" />
-  <project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="pdk,qcom,qcom_display" />
-  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom,qcom_gps,pdk" />
   <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom,qcom_keymaster,pdk" />
-  <project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom,pdk" />
   <project path="hardware/qcom/msm8960" name="platform/hardware/qcom/msm8960" groups="qcom_msm8960,pdk" />
   <project path="hardware/qcom/msm8994" name="platform/hardware/qcom/msm8994" groups="qcom_msm8994,pdk" />
   <project path="hardware/qcom/msm8996" name="platform/hardware/qcom/msm8996" groups="qcom_msm8996" />
@@ -388,7 +384,6 @@
   <project path="hardware/qcom/msm8x09" name="platform/hardware/qcom/msm8x09" groups="qcom_msm8x09" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk" />
-  <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
@@ -570,6 +565,18 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
+
+        <!--hardware-->
+    <project path="hardware/libhardware" name="android_hardware_libhardware" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/audio" name="android_hardware_qcom_audio" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/audio-caf-msm8952" name="android_hardware_qcom_audio-caf-msm8952" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/display-caf-msm8952" name="android_hardware_qcom_display-caf-msm8952" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/media" name="android_hardware_qcom_media" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/media-caf-msm8952" name="android_hardware_qcom_media-caf-msm8952" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="aospkenzo" revision="oreo-8.1" />
+    <project path="hardware/ril" name="android_hardware_ril" remote="aospkenzo" revision="oreo-8.1" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
